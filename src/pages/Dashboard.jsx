@@ -8,7 +8,6 @@ export default function Dashboard() {
 
   const [videoSrc, setVideoSrc] = useState(null)
   const [videoFile, setVideoFile] = useState(null)
-  const [sam3Enabled, setSam3Enabled] = useState(false)
   const [aiOutput, setAiOutput] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -39,7 +38,7 @@ export default function Dashboard() {
     setAiOutput(null)
 
     try {
-      const data = await analyzeLift(videoFile, sam3Enabled)
+      const data = await analyzeLift(videoFile)
       setAiOutput(data)
     } catch (err) {
       setError(err.message)
@@ -56,17 +55,6 @@ export default function Dashboard() {
           ← FitBuddy AI
         </span>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          {/* SAM3 Toggle */}
-          <label className="sam3-toggle">
-            <span className="toggle-label">SAM3</span>
-            <div
-              className={`toggle-track ${sam3Enabled ? 'active' : ''}`}
-              onClick={() => setSam3Enabled(v => !v)}
-            >
-              <div className="toggle-thumb"/>
-            </div>
-            <span className="toggle-state">{sam3Enabled ? 'ON' : 'OFF'}</span>
-          </label>
         </div>
       </nav>
 
