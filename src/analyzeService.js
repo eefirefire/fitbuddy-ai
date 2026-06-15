@@ -1,6 +1,6 @@
 import { GoogleGenAI } from '@google/genai'
 
-const client = new GoogleGenAI({ apiKey: 'AIzaSyBQuaK32BhiNCo9BdKpAAwrPJoNTVYKK-w' })
+const client = new GoogleGenAI({ apiKey: 'API_KEY_here' })
 const ANALYST_MODEL_ID = 'models/gemini-3.1-flash-lite-preview'
 
 // ── Exact prompts from few-shot.py ────────────────────────────────────────────
